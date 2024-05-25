@@ -1,3 +1,3 @@
 # NHL
 
-Project
+Project Details
