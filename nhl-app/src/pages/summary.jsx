@@ -36,7 +36,7 @@ function Summary() {
 
   const handleSortKeyChange = (e) => {
     setSortKey(e.target.value);
-    renderTable();
+    renderCards();
   };
 
   const sortData = (data) => {
@@ -48,7 +48,7 @@ function Summary() {
     });
   };
 
-  const renderTable = () => {
+  const renderCards = () => {
     if (!data) return null;
 
     const dataArray = Object.values(data);
@@ -98,7 +98,7 @@ function Summary() {
       </select>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
-      {data && renderTable()}
+      {data && renderCards()}
     </div>
   );
 }
