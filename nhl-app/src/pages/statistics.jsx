@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import SeasonDropdown from "../components/SeasonDropdown";
 
 function Statistics() {
   const [loading, setLoading] = useState(false);
@@ -66,16 +67,12 @@ function Statistics() {
   return (
     <div>
       <h3>All Statistics</h3>
-      <select
-        id="seasonIdSelect"
-        value={seasonId}
-        onChange={handleSeasonChange}
-      >
-        <option value="20222023">2022-2023</option>
-        <option value="20232024">2023-2024</option>
-        <option value="20212022">2021-2022</option>
-        {/* Add more options as needed */}
-      </select>
+      {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
+        <SeasonDropdown
+          seasonId={seasonId}
+          handleSeasonChange={handleSeasonChange}
+        />
+      )}
       <div>
         <label>
           Select Teams:
