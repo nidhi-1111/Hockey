@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TeamCards from "../components/TeamCards";
 import "../styles/summary.css";
+import SeasonDropdown from "../components/SeasonDropdown";
 
 function Summary() {
   const [seasonId, setSeasonId] = useState("20232024"); // Default seasonId
@@ -73,20 +74,17 @@ function Summary() {
     );
   };
 
+  console.log(seasonId);
+
   return (
     <div>
       <h3>Summary Page</h3>
-      <label htmlFor="seasonIdSelect">Select Season ID:</label>
-      <select
-        id="seasonIdSelect"
-        value={seasonId}
-        onChange={handleSeasonChange}
-      >
-        <option value="20222023">2022-2023</option>
-        <option value="20232024">2023-2024</option>
-        <option value="20212022">2021-2022</option>
-        {/* Add more options as needed */}
-      </select>
+      {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
+        <SeasonDropdown
+          seasonId={seasonId}
+          handleSeasonChange={handleSeasonChange}
+        />
+      )}
 
       <label htmlFor="sortBy">Sort By</label>
       <select id="sortKeySelect" value={sortKey} onChange={handleSortKeyChange}>

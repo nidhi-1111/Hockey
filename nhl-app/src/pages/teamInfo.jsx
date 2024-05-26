@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import SeasonDropdown from "../components/SeasonDropdown";
 
 function Teams() {
   const [loading, setLoading] = useState(false);
@@ -79,17 +80,12 @@ function Teams() {
         {/* Add more options as needed */}
       </select>
 
-      <label htmlFor="seasonIdSelect">Select Season ID:</label>
-      <select
-        id="seasonIdSelect"
-        value={seasonId}
-        onChange={handleSeasonChange}
-      >
-        <option value="20222023">2022-2023</option>
-        <option value="20232024">2023-2024</option>
-        <option value="20212022">2021-2022</option>
-        {/* Add more options as needed */}
-      </select>
+      {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
+        <SeasonDropdown
+          seasonId={seasonId}
+          handleSeasonChange={handleSeasonChange}
+        />
+      )}
       <h3>{teamData[0]?.teamFullName}</h3>
 
       {loading && <p>Loading...</p>}
