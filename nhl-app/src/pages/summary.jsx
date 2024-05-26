@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import TeamCards from "../components/TeamCards";
+import "../styles/summary.css";
 
 function Summary() {
   const [seasonId, setSeasonId] = useState("20232024"); // Default seasonId
@@ -39,7 +41,7 @@ function Summary() {
 
   const sortData = (data) => {
     return data.sort((a, b) => {
-      if (a[sortKey] == b[sortKey]) {
+      if (a[sortKey] === b[sortKey]) {
         return a["pointPercentage"] < b["pointPercentage"] ? 1 : -1; //If any 2 teams have similar then it will look at Point Percentage
       }
       return a[sortKey] < b[sortKey] ? 1 : -1; //By Default set for descending
@@ -63,30 +65,11 @@ function Summary() {
     const sortedData = sortData(extractedData);
 
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Team Full Name</th>
-            <th>Games Played</th>
-            <th>Losses</th>
-            <th>Wins</th>
-            <th>Points</th>
-            {/* <th>Point Percentage</th> */}
-          </tr>
-        </thead>
-        <tbody>
-          {sortedData.map((item, index) => (
-            <tr key={index}>
-              <td>{item.teamFullName}</td>
-              <td>{item.gamesPlayed}</td>
-              <td>{item.losses}</td>
-              <td>{item.wins}</td>
-              <td>{item.points}</td>
-              {/* <td>{item.pointPercentage}</td> */}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="card-container">
+        {sortedData.map((team, index) => (
+          <TeamCards key={index} team={team} seasonId={seasonId} />
+        ))}
+      </div>
     );
   };
 
