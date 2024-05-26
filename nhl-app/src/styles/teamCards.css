@@ -1,12 +1,11 @@
-/* Card.css */
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 16px;
-  margin: 8px;
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0px 32px 0px 18px; /* Center the card horizontally */
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .card:hover {
@@ -15,9 +14,43 @@
 
 .card h2 {
   font-size: 1.5em;
-  margin-bottom: 8px;
+  align-content: left;
 }
 
 .card p {
   margin: 4px 0;
+}
+
+.card-heading {
+  width: 30%;
+  margin: 4px;
+  align-items: center;
+}
+.card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+/* link.css */
+.custom-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-link:hover {
+  text-decoration: none; /* Remove underline on hover */
+  color: inherit; /* Inherit text color on hover */
+}
+
+.card-page {
+  margin: 8px, 18px, 8px, 18px;
+  padding: 0;
+  width: 100%;
 }

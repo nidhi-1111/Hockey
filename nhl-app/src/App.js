@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Summary from "./pages/summary";
 import Teams from "./pages/teamInfo";
+import Statistics from "./pages/statistics";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Navigate to="/NHLSummary" />} />
           <Route path="/NHLSummary" element={<Summary />} />
           <Route path="/NHLTeams/:teamName" element={<Teams />} />
+          <Route path="/NHLAllStats" element={<Statistics />} />
           {/* Add more routes here as needed */}
         </Routes>
       </div>
