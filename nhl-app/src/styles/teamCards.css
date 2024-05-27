@@ -1,6 +1,6 @@
 .card {
   background-color: rgba(0, 0, 0, 0.6); /* Light black with 20% opacity */
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 8px;
   margin: 0px 18px 0px 18px; /* Center the card horizontally */
   transition: transform 0.2s;
@@ -8,6 +8,7 @@
   flex-direction: row;
   justify-content: flex-start;
   color: aliceblue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
 .card:hover {

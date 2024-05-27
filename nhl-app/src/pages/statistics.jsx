@@ -67,7 +67,7 @@ function Statistics() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar title="All Stats" seasonId={seasonId} />
       <h3>All Statistics</h3>
       {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
         <SeasonDropdown

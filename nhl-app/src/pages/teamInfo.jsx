@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import SeasonDropdown from "../components/SeasonDropdown";
 import Navbar from "../components/Navbar";
+import TeamDropdown from "../components/TeamDropdown";
+import "../styles/teamInfo.css";
 
 function Teams() {
   const [loading, setLoading] = useState(false);
@@ -14,6 +16,7 @@ function Teams() {
   const queryParams = new URLSearchParams(location.search);
   const initialSeasonId = queryParams.get("seasonId") || "20232024"; // Default to "20232024" if not provided
 
+  const [allTeams, setAllTeams] = useState([]);
   const [seasonId, setSeasonId] = useState(initialSeasonId);
   const [teamNameLocal, setTeamNameLocal] = useState(
     decodeURIComponent(teamName)
@@ -31,6 +34,7 @@ function Teams() {
         const teamData = dataArray[0].find(
           (team) => team.teamFullName === decodeURIComponent(teamNameLocal)
         );
+        setAllTeams(dataArray[0]);
         setTeamData(teamData);
       } catch (error) {
         setError(error);
@@ -55,44 +59,64 @@ function Teams() {
   };
 
   const renderTeamData = () => {
-    if (Object.keys(teamData).length === 0) return null;
+    if (!teamData) return null;
+
+    const fieldsToRender = {
+      gamesPlayed: "Games Played",
+      points: "Points",
+      wins: "Wins",
+      losses: "Losses",
+      ties: "Ties",
+      otLosses: "OT Losses",
+      goalsAgainst: "Goals Against",
+      goalsFor: "Goals For",
+      pointPct: "Point %",
+      winsInRegulation: "Wins in Regulation",
+      winsInShootout: "Wins in Shootout",
+      faceoffWinPct: "Faceoff Win%",
+    };
 
     return (
-      <div>
-        {Object.entries(teamData).map(([key, value]) => (
-          <p key={key}>
-            <strong>{key}:</strong> {value !== null ? value : "N/A"}
-          </p>
-        ))}
+      <div className="team-card-page">
+        <div className="team-card">
+          {Object.entries(fieldsToRender).map(([key, label]) => (
+            <div className="team-values" key={key}>
+              <p className="team-numbers">
+                {teamData[key] !== null
+                  ? key === "pointPct" || key === "faceoffWinPct"
+                    ? Number(teamData[key]).toFixed(2)
+                    : teamData[key]
+                  : "0"}
+              </p>
+              <p className="team-labels">{label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   };
 
   return (
-    <div>
-      <Navbar />
-      <select
-        id="teamNameSelect"
-        value={decodeURIComponent(teamName)}
-        onChange={handleTeamNameChange}
-      >
-        <option value="New York Rangers">New York Rangers</option>
-        <option value="Edmonton Oilers">Edmonton Oilers</option>
-        <option value="Florida Panthers">Florida Panthers</option>
-        {/* Add more options as needed */}
-      </select>
-
-      {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
-        <SeasonDropdown
-          seasonId={seasonId}
-          handleSeasonChange={handleSeasonChange}
-        />
-      )}
-      <h3>{teamData[0]?.teamFullName}</h3>
-
+    <div className="main-container">
+      <Navbar title={teamNameLocal} seasonId={seasonId} />
+      <div className="summary-container">
+        <div className="dropdown">
+          {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
+            <SeasonDropdown
+              seasonId={seasonId}
+              handleSeasonChange={handleSeasonChange}
+            />
+          )}
+          <TeamDropdown
+            teamName={teamName}
+            handleTeamNameChange={handleTeamNameChange}
+            allTeams={allTeams}
+          />
+        </div>
+        {teamData && renderTeamData()}
+      </div>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
-      {teamData && renderTeamData()}
     </div>
   );
 }

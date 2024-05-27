@@ -1,0 +1,43 @@
+.team-card-page {
+  margin: 8px, 18px, 8px, 18px;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team-card {
+  background-color: rgba(0, 0, 0, 0.6); /* Light black with 20% opacity */
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  margin: 30px 18px 30px 18px; /* Center the card horizontally */
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: aliceblue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  flex-wrap: wrap;
+  width: 85%;
+  align-self: center;
+  padding: 10px;
+}
+.team-values {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-numbers {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.team-labels {
+  margin: 0;
+}

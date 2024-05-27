@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: space-around;
   padding-left: 10px;
-  gap: 80%;
+  gap: 29%;
   padding-right: 10px;
 }
 
@@ -25,6 +25,20 @@
   align-items: center;
   margin-right: 20px;
   gap: 20px;
+}
+
+.navbar-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+}
+
+.navbar-center h3 {
+  margin: 0; /* Removes default margin */
+  font-size: 2rem; /* Adjusts font size */
+  color: #f9f6f6; /* Adjusts text color */
 }
 
 .navbar-heading {

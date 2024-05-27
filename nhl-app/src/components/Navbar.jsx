@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faFileInvoice } from "@fortawesome/free-solid-svg-icons";
 import "../styles/navbar.css";
 
-function Navbar() {
+function Navbar(props) {
   const location = useLocation();
 
   return (
@@ -14,9 +14,12 @@ function Navbar() {
         <img className="image" src={NHL_LOGO} alt="NHL Logo" />
         <h3 className="navbar-heading">NHL</h3>
       </div>
+      <div className="navbar-center">
+        <h3>{props.title}</h3>
+      </div>
       <div className="navbar-right">
         <Link
-          to="/NHLSummary"
+          to={`/NHLSummary?seasonId=${props.seasonId}`}
           className={location.pathname === "/NHLSummary" ? "active-link" : ""}
         >
           <FontAwesomeIcon icon={faHouse} className="home-icon" />
