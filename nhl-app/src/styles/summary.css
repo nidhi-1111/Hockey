@@ -27,8 +27,8 @@
   height: 100%;
   background: url("../images/NHL_Background.jpg") no-repeat center center;
   background-size: cover;
-  filter: blur(3px); /* Adjust the blur value as needed */
-  border-radius: 15px; /* Same border-radius as .summary-container */
+  filter: blur(3px);
+  border-radius: 15px;
   z-index: -1;
 }
 .card-container {

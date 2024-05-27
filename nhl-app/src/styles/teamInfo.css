@@ -7,10 +7,10 @@
   justify-content: center;
 }
 .team-card {
-  background-color: rgba(0, 0, 0, 0.6); /* Light black with 20% opacity */
+  background-color: rgba(0, 0, 0, 0.6);
   /* border: 1px solid #ddd; */
   border-radius: 8px;
-  margin: 30px 18px 30px 18px; /* Center the card horizontally */
+  margin: 30px 18px 30px 18px;
   transition: transform 0.2s;
   display: flex;
   flex-direction: row;

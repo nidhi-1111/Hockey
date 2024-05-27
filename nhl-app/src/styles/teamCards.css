@@ -1,8 +1,7 @@
 .card {
-  background-color: rgba(0, 0, 0, 0.6); /* Light black with 20% opacity */
-  /* border: 1px solid #ddd; */
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
-  margin: 0px 18px 0px 18px; /* Center the card horizontally */
+  margin: 0px 18px 0px 18px;
   transition: transform 0.2s;
   display: flex;
   flex-direction: row;
@@ -48,19 +47,19 @@
   padding: 0;
   margin: 0;
 }
-/* link.css */
+
 .custom-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit text color */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .custom-link:hover {
-  text-decoration: none; /* Remove underline on hover */
-  color: inherit; /* Inherit text color on hover */
+  text-decoration: none;
+  color: inherit;
 }
 
 .card-page {

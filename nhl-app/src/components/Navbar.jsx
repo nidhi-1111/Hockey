@@ -10,10 +10,17 @@ function Navbar(props) {
 
   return (
     <div className="navbar">
-      <div className="navbar-left">
-        <img className="image" src={NHL_LOGO} alt="NHL Logo" />
-        <h3 className="navbar-heading">NHL</h3>
-      </div>
+      <Link
+        to={`/NHLSummary?seasonId=${props.seasonId}`}
+        className={
+          'link-style location.pathname === "/NHLSummary" ? "active-link" : ""'
+        }
+      >
+        <div className="navbar-left">
+          <img className="image" src={NHL_LOGO} alt="NHL Logo" />
+          <h3 className="navbar-heading">NHL</h3>
+        </div>
+      </Link>
       <div className="navbar-center">
         <h3>{props.title}</h3>
       </div>

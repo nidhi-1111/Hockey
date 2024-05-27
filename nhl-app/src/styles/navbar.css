@@ -30,15 +30,16 @@
 .navbar-center {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   color: white;
 }
 
 .navbar-center h3 {
-  margin: 0; /* Removes default margin */
-  font-size: 2rem; /* Adjusts font size */
-  color: #f9f6f6; /* Adjusts text color */
+  margin: 0;
+  font-size: 2rem;
+  color: #f9f6f6;
 }
 
 .navbar-heading {
@@ -64,4 +65,8 @@
 
 .active-link .home-icon {
   color: #007bff;
+}
+
+.link-style {
+  text-decoration: none;
 }

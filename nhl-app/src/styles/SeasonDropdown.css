@@ -1,28 +1,26 @@
 .dropdown-container {
-  margin-bottom: 5px; /* Add some spacing between the dropdown and other elements */
+  margin-bottom: 5px;
 }
 
 .dropdown-content {
-  padding: 8px 12px; /* Adjust padding as needed */
-  font-size: 16px; /* Adjust font size */
-  border-radius: 4px; /* Add rounded corners */
-  border: 1px solid #ccc; /* Add border */
-  background-color: rgba(0, 0, 0, 0.4); /* Add background color */
-  color: #333; /* Set text color */
-  outline: none; /* Remove default focus outline */
-  cursor: pointer; /* Change cursor on hover */
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #333;
+  outline: none;
+  cursor: pointer;
   color: #eaeaea;
 }
 
-/* Style when dropdown is hovered */
 .dropdown-content:hover {
   background-color: #354f5d;
 }
 
-/* Style when dropdown is focused */
 .dropdown-content:focus {
-  border-color: #007bff; /* Change border color */
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Add focus shadow */
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .dropdownLabel {
