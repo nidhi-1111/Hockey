@@ -25,7 +25,7 @@ function Navbar(props) {
           <FontAwesomeIcon icon={faHouse} className="home-icon" />
         </Link>
         <Link
-          to="/NHLAllStats"
+          to={`/NHLAllStats?seasonId=${props.seasonId}`}
           className={location.pathname === "/NHLAllStats" ? "active-link" : ""}
         >
           <FontAwesomeIcon icon={faFileInvoice} className="home-icon" />
