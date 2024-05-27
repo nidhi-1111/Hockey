@@ -59,7 +59,12 @@ function Teams() {
   };
 
   const renderTeamData = () => {
-    if (!teamData) return null;
+    if (!teamData)
+      return (
+        <div className="card">
+          <p>This Team did not participate in this Season.</p>
+        </div>
+      );
 
     const fieldsToRender = {
       gamesPlayed: "Games Played",

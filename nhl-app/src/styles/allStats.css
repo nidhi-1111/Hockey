@@ -1,0 +1,80 @@
+/* Add this to your existing CSS file, e.g., multiSelect.css */
+
+.multi-select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.multi-dropdown-button {
+  padding: 8px 12px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size */
+  border-radius: 4px; /* Add rounded corners */
+  border: 1px solid #ccc; /* Add border */
+  background-color: rgba(0, 0, 0, 0.4); /* Add background color */
+  color: #333; /* Set text color */
+  outline: none; /* Remove default focus outline */
+  cursor: pointer; /* Change cursor on hover */
+  color: #eaeaea;
+}
+
+.multi-dropdown-button:hover {
+  background-color: #354f5d;
+}
+
+.multi-dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  border: 1px solid #ccc; /* Add border */
+  background-color: #354f5d;
+  border-radius: 4px;
+  width: 200px;
+  z-index: 1;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.multi-dropdown-menu.show {
+  display: block;
+}
+
+.multi-dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  right: 0;
+}
+
+.multi-dropdown-item:hover {
+  background-color: #354f5d;
+}
+
+.multi-dropdown-item input {
+  margin-right: 8px;
+}
+
+.select-all-item {
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-table {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 0.5px solid rgba(169, 169, 169, 0.3);
+  padding: 3px;
+  text-align: center;
+}
+
+.custom-table th {
+  background-color: black;
+}
+
+.table-row:nth-child(even) {
+  background-color: rgba(39, 38, 38, 0);
+}
