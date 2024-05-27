@@ -6,9 +6,13 @@ import "../styles/global.css";
 import SeasonDropdown from "../components/SeasonDropdown";
 import Navbar from "../components/Navbar";
 import SortBy from "../components/SortBy";
+import { useLocation } from "react-router-dom";
 
 function Summary() {
-  const [seasonId, setSeasonId] = useState("20232024"); // Default seasonId
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const initialSeasonId = queryParams.get("seasonId") || "20232024";
+  const [seasonId, setSeasonId] = useState(initialSeasonId);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -81,10 +85,7 @@ function Summary() {
 
   return (
     <div className="main-container">
-      <Navbar />
-      <div className="header">
-        <h3>Summary</h3>
-      </div>
+      <Navbar title="Summary" seasonId={seasonId} />
       <div className="summary-container">
         <div className="dropdown">
           {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown

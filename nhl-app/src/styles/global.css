@@ -4,9 +4,3 @@
   padding-top: 3px;
   padding-bottom: 15px;
 }
-
-.header h3 {
-  margin: 0; /* Removes default margin */
-  font-size: 2rem; /* Adjusts font size */
-  color: #f9f6f6; /* Adjusts text color */
-}
