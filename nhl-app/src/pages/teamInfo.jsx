@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import SeasonDropdown from "../components/SeasonDropdown";
+import Navbar from "../components/Navbar";
 
 function Teams() {
   const [loading, setLoading] = useState(false);
@@ -69,6 +70,7 @@ function Teams() {
 
   return (
     <div>
+      <Navbar />
       <select
         id="teamNameSelect"
         value={decodeURIComponent(teamName)}

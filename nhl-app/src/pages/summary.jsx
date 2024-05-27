@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TeamCards from "../components/TeamCards";
 import "../styles/summary.css";
+import "../styles/global.css";
 import SeasonDropdown from "../components/SeasonDropdown";
+import Navbar from "../components/Navbar";
+import SortBy from "../components/SortBy";
 
 function Summary() {
   const [seasonId, setSeasonId] = useState("20232024"); // Default seasonId
@@ -77,26 +80,25 @@ function Summary() {
   console.log(seasonId);
 
   return (
-    <div>
-      <h3>Summary Page</h3>
-      {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
-        <SeasonDropdown
-          seasonId={seasonId}
-          handleSeasonChange={handleSeasonChange}
-        />
-      )}
-
-      <label htmlFor="sortBy">Sort By</label>
-      <select id="sortKeySelect" value={sortKey} onChange={handleSortKeyChange}>
-        <option value="points">Points</option>
-        <option value="gamesPlayed">Games Played</option>
-        <option value="wins">Wins</option>
-        <option value="losses">Losses</option>
-        {/* Add more options as needed */}
-      </select>
+    <div className="main-container">
+      <Navbar />
+      <div className="header">
+        <h3>Summary</h3>
+      </div>
+      <div className="summary-container">
+        <div className="dropdown">
+          {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
+            <SeasonDropdown
+              seasonId={seasonId}
+              handleSeasonChange={handleSeasonChange}
+            />
+          )}
+          <SortBy sortKey={sortKey} handleSortKeyChange={handleSortKeyChange} />
+        </div>
+        {data && renderCards()}
+      </div>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
-      {data && renderCards()}
     </div>
   );
 }

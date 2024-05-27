@@ -20,12 +20,23 @@ function TeamCards(props) {
             <h2>{props.team.teamFullName}</h2>
           </div>
           <div className="card-content">
-            <p>Games Played: {props.team.gamesPlayed}</p>
-            <p>Losses: {props.team.losses}</p>
-            <p>Wins: {props.team.wins}</p>
-            <p>Points: {props.team.points}</p>
+            <div className="card-values">
+              <p className="card-numbers">{props.team.gamesPlayed}</p>
+              <p className="card-labels">Games</p>
+            </div>
+            <div className="card-values">
+              <p className="card-numbers">{props.team.wins}</p>
+              <p className="card-labels">Wins</p>
+            </div>
+            <div className="card-values">
+              <p className="card-numbers">{props.team.losses}</p>
+              <p className="card-labels">Losses</p>
+            </div>
+            <div className="card-values">
+              <p className="card-numbers">{props.team.points}</p>
+              <p className="card-labels">Points</p>
+            </div>
           </div>
-          {/* <p>Point Percentage: {team.pointPercentage}</p> */}
         </div>
       </Link>
     </div>

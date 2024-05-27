@@ -12,7 +12,7 @@ import Statistics from "./pages/statistics";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="">
         <Routes>
           <Route path="/" element={<Navigate to="/NHLSummary" />} />
           <Route path="/NHLSummary" element={<Summary />} />
