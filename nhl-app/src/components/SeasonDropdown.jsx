@@ -1,6 +1,6 @@
 import React from "react";
 import seasonData from "../data/season.json";
-import "../styles/SeasonDropdown.css"; // Import CSS file for styling
+import "../styles/SeasonDropdown.css";
 
 function SeasonDropdown(props) {
   return (
@@ -8,7 +8,7 @@ function SeasonDropdown(props) {
       <label className="dropdownLabel">Season : </label>
       <select
         id="seasonIdSelect"
-        className="dropdown-content" // Apply a class to style the dropdown
+        className="dropdown-content"
         value={props.seasonId}
         onChange={props.handleSeasonChange}
       >

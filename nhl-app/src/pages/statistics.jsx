@@ -162,7 +162,7 @@ function Statistics() {
             </button>
             <div
               className={`multi-dropdown-menu ${dropdownOpen ? "show" : ""}`}
-              style={{ left: 0 }} // Add this style to position the dropdown to the left
+              style={{ right: 0 }}
             >
               <div className="dropdown-item select-all-item">
                 <input
