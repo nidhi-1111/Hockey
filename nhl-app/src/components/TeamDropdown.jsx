@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/SeasonDropdown.css";
 
 function TeamDropdown(props) {
   return (

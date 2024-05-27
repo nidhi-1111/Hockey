@@ -36,8 +36,6 @@ function Statistics() {
     fetchData();
   }, [seasonId]);
 
-  console.log("data", data);
-
   useEffect(() => {
     const names = data.map((team) => team.teamFullName);
     setTeamNames([...new Set(names)]);

@@ -36,8 +36,6 @@ function Summary() {
     fetchData();
   }, [seasonId]);
 
-  console.log("Data Recieved", data);
-
   const handleSeasonChange = (e) => {
     setSeasonId(e.target.value);
   };
@@ -80,8 +78,6 @@ function Summary() {
       </div>
     );
   };
-
-  console.log(seasonId);
 
   return (
     <div className="main-container">
