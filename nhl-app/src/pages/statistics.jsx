@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SeasonDropdown from "../components/SeasonDropdown";
+import Navbar from "../components/Navbar";
 
 function Statistics() {
   const [loading, setLoading] = useState(false);
@@ -66,6 +67,7 @@ function Statistics() {
 
   return (
     <div>
+      <Navbar />
       <h3>All Statistics</h3>
       {seasonId && ( // Check if seasonId is defined before rendering SeasonDropdown
         <SeasonDropdown
