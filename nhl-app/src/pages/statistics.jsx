@@ -3,7 +3,9 @@ import axios from "axios";
 import SeasonDropdown from "../components/SeasonDropdown";
 import Navbar from "../components/Navbar";
 import "../styles/allStats.css";
+import headerMapping from "../data/headerMapping.json";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Statistics() {
   const [loading, setLoading] = useState(false);
@@ -41,29 +43,6 @@ function Statistics() {
     setTeamNames([...new Set(names)]);
     setSelectedTeams([...new Set(names)]);
   }, [data]);
-
-  const headerMapping = {
-    teamFullName: "Team",
-    gamesPlayed: "GP",
-    wins: "W",
-    losses: "L",
-    otLosses: "OTL",
-    goalsFor: "GF",
-    goalsAgainst: "GA",
-    goalsForPerGame: "GF/G",
-    goalsAgainstPerGame: "GA/G",
-    shotsForPerGame: "SF/G",
-    shotsAgainstPerGame: "SA/G",
-    pointPct: "P%",
-    points: "Pts",
-    powerPlayPct: "PP%",
-    powerPlayNetPct: "PP Net%",
-    penaltyKillPct: "PK%",
-    penaltyKillNetPct: "PK Net%",
-    faceoffWinPct: "FO%",
-    regulationAndOtWins: "ROW",
-    winsInRegulation: "WReg",
-  };
 
   const originalHeaders = Object.keys(headerMapping);
   const columnHeaders = originalHeaders.map((header) => headerMapping[header]);
@@ -134,7 +113,14 @@ function Statistics() {
             <tr key={index} className="table-row">
               {originalHeaders.map((header, headerIndex) => (
                 <td key={headerIndex} className="table-cell">
-                  {formatValue(team[header])}
+                  <Link
+                    to={`/NHLTeams/${encodeURIComponent(
+                      team.teamFullName
+                    )}?seasonId=${seasonId}`}
+                    className="table-row-link"
+                  >
+                    {formatValue(team[header])}
+                  </Link>
                 </td>
               ))}
             </tr>

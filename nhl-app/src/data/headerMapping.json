@@ -1,0 +1,22 @@
+{
+  "teamFullName": "Team",
+  "gamesPlayed": "GP",
+  "wins": "W",
+  "losses": "L",
+  "otLosses": "OTL",
+  "goalsFor": "GF",
+  "goalsAgainst": "GA",
+  "goalsForPerGame": "GF/G",
+  "goalsAgainstPerGame": "GA/G",
+  "shotsForPerGame": "SF/G",
+  "shotsAgainstPerGame": "SA/G",
+  "pointPct": "P%",
+  "points": "Pts",
+  "powerPlayPct": "PP%",
+  "powerPlayNetPct": "PP Net%",
+  "penaltyKillPct": "PK%",
+  "penaltyKillNetPct": "PK Net%",
+  "faceoffWinPct": "FO%",
+  "regulationAndOtWins": "ROW",
+  "winsInRegulation": "WReg"
+}

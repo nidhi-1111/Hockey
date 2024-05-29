@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import NHL_LOGO from "../images/NHL_LOGO.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faFileInvoice } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faTableColumns } from "@fortawesome/free-solid-svg-icons";
 import "../styles/navbar.css";
 
 function Navbar(props) {
@@ -35,7 +35,7 @@ function Navbar(props) {
           to={`/NHLAllStats?seasonId=${props.seasonId}`}
           className={location.pathname === "/NHLAllStats" ? "active-link" : ""}
         >
-          <FontAwesomeIcon icon={faFileInvoice} className="home-icon" />
+          <FontAwesomeIcon icon={faTableColumns} className="home-icon" />
         </Link>
       </div>
     </div>
