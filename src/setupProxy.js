@@ -11,7 +11,7 @@ module.exports = function (app) {
       },
       onProxyRes: function (proxyRes, req, res) {
         proxyRes.headers["Access-Control-Allow-Origin"] =
-          "http://localhost:3000";
+          "https://dainty-pony-5cc351.netlify.app/";
         proxyRes.headers["Access-Control-Allow-Methods"] =
           "GET,PUT,POST,DELETE";
         proxyRes.headers["Access-Control-Allow-Headers"] = "Content-Type";
